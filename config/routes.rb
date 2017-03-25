@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   get 'vitamins/new'
 
   get 'vitamins/create'
