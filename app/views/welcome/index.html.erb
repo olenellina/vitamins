@@ -3,5 +3,8 @@
 <% end %>
 
 <div id="main-landing">
-  <h1>Vitamin Tracker</h1>
+  <h1>Welcome</h1>
+  <% if session[:user_id] == nil %>
+    <p><%= link_to "Please Login", "/auth/github" %></p>
+  <% end %>
 </div>

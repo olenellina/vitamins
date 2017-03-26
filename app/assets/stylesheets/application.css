@@ -31,6 +31,7 @@
  header {
   border: 2px solid black;
   margin-bottom: 2%;
+  background-color: white;
  }
 
  nav {
@@ -40,4 +41,22 @@
    background-size: 11%;
    background-repeat: repeat-y;
    background-position: center center;
+ }
+
+ li {
+   list-style-type: none;
+   display: inline-block;
+   padding-right: 1%;
+ }
+
+ li a {
+   text-decoration: none;
+ }
+
+ ul {
+   padding-left: 0%;
+ }
+
+ a:hover {
+   color: gray;
  }
