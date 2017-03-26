@@ -1,5 +1,7 @@
-<header>
-  <h2>Welcome to vitamin tracker</h2>
-</header>
+<% if flash[:notice] %>
+<p><%= flash[:notice] %></p>
+<% end %>
 
-<p> Sign in - Oauth </p>
+<div id="main-landing">
+  <h1>Vitamin Tracker</h1>
+</div>

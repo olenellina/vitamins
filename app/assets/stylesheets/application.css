@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+#main-landing {
+   text-align: center;
+ }
+
+ body {
+   font-family: 'Source Sans Pro', sans-serif;
+   font-size: 1.5em;
+   background-image: url("vitamins.png");
+   background-size: 75%;
+   background-repeat: no-repeat;
+   background-color: hsla(0,0%,100%,0.70);
+   background-blend-mode: overlay;
+ }
+
+ header {
+  border: 2px solid black;
+  margin-bottom: 2%;
+ }
+
+ nav {
+   font-size: 1em;
+   padding: .5%;
+   background-image: url("to-do.jpg");
+   background-size: 11%;
+   background-repeat: repeat-y;
+   background-position: center center;
+ }

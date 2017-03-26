@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+
+  get 'user/create'
+
+  get 'sessions/create'
+
+  delete 'sessions/:id/destroy' => 'sessions#destroy', as: 'session_delete'
+
   get 'welcome/index'=> 'welcome#index'
 
   get 'vitamins/new'
@@ -15,7 +23,7 @@ Rails.application.routes.draw do
 
   get 'vitamins/show'
 
-  root 'welcome#index'
+  # Tells oAuth where to send user after login
+  get "/auth/:provider/callback", to: "sessions#create"
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
