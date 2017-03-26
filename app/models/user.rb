@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :vitamins
 
   validates :username,
             presence: true,
