@@ -19,9 +19,10 @@ class VitaminsController < ApplicationController
     @myvitamin.name = params[:vitamin][:name]
     @myvitamin.dosage = params[:vitamin][:dosage]
     @myvitamin.cost = params[:vitamin][:cost]
+    @myvitamin.retailer = params[:vitamin][:retailer]
     @myvitamin.photo = params[:vitamin][:photo]
     @myvitamin.observations = params[:vitamin][:observations]
-    @myvitamin.notes = params[:vitamin][:name]
+    @myvitamin.notes = params[:vitamin][:notes]
     @myvitamin.required = params[:vitamin][:required]
     @myvitamin.active = params[:vitamin][:active]
     @myvitamin.save
@@ -33,9 +34,10 @@ class VitaminsController < ApplicationController
     @myvitamin.name = params[:vitamin][:name]
     @myvitamin.dosage = params[:vitamin][:dosage]
     @myvitamin.cost = params[:vitamin][:cost]
+    @myvitamin.retailer = params[:vitamin][:retailer]
     @myvitamin.photo = params[:vitamin][:photo]
     @myvitamin.observations = params[:vitamin][:observations]
-    @myvitamin.notes = params[:vitamin][:name]
+    @myvitamin.notes = params[:vitamin][:notes]
     @myvitamin.required = params[:vitamin][:required]
     @myvitamin.active = params[:vitamin][:active]
     @myvitamin.save
