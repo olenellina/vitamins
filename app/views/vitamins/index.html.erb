@@ -1,2 +1,30 @@
-<h1>Vitamins#index</h1>
-<p>Find me in app/views/vitamins/index.html.erb</p>
+<% if flash[:notice] %>
+<p><%= flash[:notice] %></p>
+<% end %>
+
+<p> HELLO! </p>
+<% if @vitamins %>
+  <h3>Required Vitamins</h3>
+  <% @vitamins.each do |vitamin| %>
+    <!-- Dividing view to show open vitamins and then completed vitamins for better user experience. -->
+    <% if vitamin.required %>
+        <section>
+          <h3><%=link_to( vitamin.name, vitamins_show_path(vitamin.id)) %></h3>
+            <!-- <div class="buttons"><%= button_to "Task Complete", vitamins_complete_path(vitamin.id), method: :put, data: {confirm:"Mark this vitamin complete?"}  %></div>
+            <div class="buttons"><%= button_to "Delete Task", vitamins_delete_path(vitamin.id), method: :delete, data: {confirm:"Delete this vitamin?"}  %></div> -->
+        </section>
+    <% end %>
+
+  <% end %>
+
+  <br>
+
+  <h3>Experimental Vitamins</h3>
+  <% @vitamins.each do |vitamin| %>
+    <% if !vitamin.required %>
+      <section>
+        <h3><%=link_to( vitamin.name, vitamins_show_path(vitamin.id)) %></h3>
+      </section>
+      <% end %>
+  <% end %>
+<% end %>

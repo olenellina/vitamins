@@ -1,2 +1,29 @@
-<h1>Vitamins#new</h1>
-<p>Find me in app/views/vitamins/new.html.erb</p>
+<h1>New Vitamin Record</h1>
+
+<%= form_for @myvitamin, url: vitamins_create_path do |f| %>
+  <%= f.label :name%>
+  <%= f.text_field :name%>
+
+  <%= f.label :dosage %>
+  <%= f.text_field :dosage %>
+
+  <%= f.label :cost %>
+  <%= f.number_field :cost %>
+
+  <%= f.label :photo %>
+  <%= f.text_field :photo %>
+
+  <%= f.label :observations %>
+  <%= f.text_area :observations %>
+
+  <%= f.label :notes %>
+  <%= f.text_area :notes %>
+
+  <%= f.label :active %>
+  <%= f.check_box :active, {}, "true", "false" %>
+
+  <%= f.label :required %>
+  <%= f.check_box :required, {}, "true", "false" %>
+
+  <%= f.submit %>
+<% end %>

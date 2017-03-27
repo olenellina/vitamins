@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     session[:user_id] = @user.id
 
     flash[:notice] = "Successfully Logged In"
-    redirect_to root_path
+    redirect_to vitamins_index_path
 
   end
 
