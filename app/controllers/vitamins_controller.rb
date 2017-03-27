@@ -24,28 +24,31 @@ class VitaminsController < ApplicationController
     @myvitamin.notes = params[:vitamin][:name]
     @myvitamin.required = params[:vitamin][:required]
     @myvitamin.active = params[:vitamin][:active]
-    # if params[:vitamin][:required] == 1
-    #   @myvitamin.required = true
-    # else
-    #   @myvitamin.required = false
-    # end
-    # if params[:vitamin][:active] == 1
-    #   @myvitamin.active = true
-    # else
-    #   @myvitamin.active = false
-    # end
     @myvitamin.save
 
     return redirect_to action: 'index'
   end
 
   def update
+    @myvitamin.name = params[:vitamin][:name]
+    @myvitamin.dosage = params[:vitamin][:dosage]
+    @myvitamin.cost = params[:vitamin][:cost]
+    @myvitamin.photo = params[:vitamin][:photo]
+    @myvitamin.observations = params[:vitamin][:observations]
+    @myvitamin.notes = params[:vitamin][:name]
+    @myvitamin.required = params[:vitamin][:required]
+    @myvitamin.active = params[:vitamin][:active]
+    @myvitamin.save
+
+    redirect_to action: 'index'
   end
 
   def edit
   end
 
   def destroy
+    Vitamin.find(params[:id]).destroy
+    redirect_to action: 'index'
   end
 
   private

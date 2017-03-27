@@ -1,2 +1,5 @@
-<h1>Vitamins#show</h1>
-<p>Find me in app/views/vitamins/show.html.erb</p>
+<h3>Vitamin <%= @myvitamin.id %>: <%= @myvitamin.name %></h3>
+<section>
+  <div class="buttons"><%= button_to "Edit Vitamin", vitamins_edit_path(@myvitamin.id), method: :get%></div>
+  <div class="buttons"><%= button_to "Delete Vitamin", vitamins_delete_path(@myvitamin.id), method: :delete, data: {confirm:"Are you Sure?" }  %></div>
+</section>
