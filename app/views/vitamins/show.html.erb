@@ -11,6 +11,10 @@
     <td><%= @myvitamin.required %></td>
   </tr>
   <tr>
+    <td>Added: </td>
+    <td><%= @myvitamin.created_at.strftime("%B %e %Y") %></td>
+  </tr>
+  <tr>
     <td>Dosage per day: </td>
     <td><%= @myvitamin.dosage %></td>
   </tr>
