@@ -100,6 +100,6 @@
   <% end %>
 </table>
 <section>
-  <div class="buttons"><%= button_to "Edit Vitamin", vitamins_edit_path(@myvitamin.id), method: :get%></div>
-  <div class="buttons"><%= button_to "Delete Vitamin", vitamins_delete_path(@myvitamin.id), method: :delete, data: {confirm:"Are you Sure?" }  %></div>
+  <%= button_to "Edit Vitamin", vitamins_edit_path(@myvitamin.id), method: :get%>
+  <%= button_to "Delete Vitamin", vitamins_delete_path(@myvitamin.id), method: :delete, data: {confirm:"Are you Sure?" }  %>
 </section>
