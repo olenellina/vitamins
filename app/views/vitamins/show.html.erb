@@ -1,4 +1,6 @@
-<h3>Vitamin <%= @myvitamin.id %>: <%= @myvitamin.name %></h3>
+<h3><%= @myvitamin.name %></h3>
+<h4>Stats:</h4>
+
 <table>
   <tr>
     <td>Active: </td>
@@ -28,6 +30,10 @@
     <td>Notes: </td>
     <td><%= @myvitamin.notes %></td>
   </tr>
+</table>
+
+  <h4>Supplmentation Purpose:</h4>
+  <table>
   <% if @myvitamin.general %>
   <tr>
     <td>General: </td>

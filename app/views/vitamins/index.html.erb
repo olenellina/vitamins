@@ -16,10 +16,21 @@
 
   <h3>Experimental Vitamins</h3>
   <% @vitamins.each do |vitamin| %>
-    <% if !vitamin.required %>
+    <% if !vitamin.required && vitamin.active %>
       <section>
         <h3><%=link_to( vitamin.name, vitamins_show_path(vitamin.id)) %></h3>
       </section>
-      <% end %>
+    <% end %>
+  <% end %>
+
+  <br>
+
+  <h3>Inactive Vitamins</h3>
+  <% @vitamins.each do |vitamin| %>
+    <% if !vitamin.active %>
+      <section>
+        <h3><%=link_to( vitamin.name, vitamins_show_path(vitamin.id)) %></h3>
+      </section>
+    <% end %>
   <% end %>
 <% end %>
