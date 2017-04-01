@@ -1,6 +1,14 @@
 <h3>Vitamin <%= @myvitamin.id %>: <%= @myvitamin.name %></h3>
 <table>
   <tr>
+    <td>Active: </td>
+    <td><%= @myvitamin.active %></td>
+  </tr>
+  <tr>
+    <td>Required: </td>
+    <td><%= @myvitamin.required %></td>
+  </tr>
+  <tr>
     <td>Dosage per day: </td>
     <td><%= @myvitamin.dosage %></td>
   </tr>
@@ -20,14 +28,66 @@
     <td>Notes: </td>
     <td><%= @myvitamin.notes %></td>
   </tr>
+  <% if @myvitamin.general %>
   <tr>
-    <td>Active: </td>
-    <td><%= @myvitamin.active %></td>
+    <td>General: </td>
+    <td>X</td>
   </tr>
+  <% end %>
+  <% if @myvitamin.antioxidant %>
   <tr>
-    <td>Required: </td>
-    <td><%= @myvitamin.required %></td>
+    <td>Antioxidant: </td>
+    <td>X</td>
   </tr>
+  <% end %>
+  <% if @myvitamin.skin %>
+  <tr>
+    <td>Improves Skin: </td>
+    <td>X</td>
+  </tr>
+  <% end %>
+  <% if @myvitamin.longevity %>
+  <tr>
+    <td>Longevity: </td>
+    <td>X</td>
+  </tr>
+  <% end %>
+  <% if @myvitamin.digestive %>
+  <tr>
+    <td>Digestive: </td>
+    <td>X</td>
+  </tr>
+  <% end %>
+  <% if @myvitamin.mood %>
+  <tr>
+    <td>Mood: </td>
+    <td>X</td>
+  </tr>
+  <% end %>
+  <% if @myvitamin.cellrepair %>
+  <tr>
+    <td>Cellular Repair: </td>
+    <td>X</td>
+  </tr>
+  <% end %>
+  <% if @myvitamin.energy %>
+  <tr>
+    <td>Energy: </td>
+    <td>X</td>
+  </tr>
+  <% end %>
+  <% if @myvitamin.alertness %>
+  <tr>
+    <td>Alertness: </td>
+    <td>X</td>
+  </tr>
+  <% end %>
+  <% if @myvitamin.sleeping %>
+  <tr>
+    <td>Sleep: </td>
+    <td>X</td>
+  </tr>
+  <% end %>
 </table>
 <section>
   <div class="buttons"><%= button_to "Edit Vitamin", vitamins_edit_path(@myvitamin.id), method: :get%></div>

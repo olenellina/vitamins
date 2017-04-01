@@ -4,6 +4,12 @@
   <%= f.label :name%>
   <%= f.text_field :name%>
 
+  <%= f.label :active %>
+  <%= f.check_box :active, {}, "true", "false" %>
+
+  <%= f.label :required %>
+  <%= f.check_box :required, {}, "true", "false" %>
+
   <%= f.label :dosage %>
   <%= f.text_field :dosage %>
 
@@ -22,11 +28,35 @@
   <%= f.label :notes %>
   <%= f.text_area :notes %>
 
-  <%= f.label :active %>
-  <%= f.check_box :active, {}, "true", "false" %>
+  <%= f.label :general %>
+  <%= f.check_box :general, {}, "true", "false" %>
 
-  <%= f.label :required %>
-  <%= f.check_box :required, {}, "true", "false" %>
+  <%= f.label :antioxidant %>
+  <%= f.check_box :antioxidant, {}, "true", "false" %>
+
+  <%= f.label :skin %>
+  <%= f.check_box :skin, {}, "true", "false" %>
+
+  <%= f.label :longevity %>
+  <%= f.check_box :longevity, {}, "true", "false" %>
+
+  <%= f.label :digestive %>
+  <%= f.check_box :digestive, {}, "true", "false" %>
+
+  <%= f.label :mood %>
+  <%= f.check_box :mood, {}, "true", "false" %>
+
+  <%= f.label :cellrepair %>
+  <%= f.check_box :cellrepair, {}, "true", "false" %>
+
+  <%= f.label :energy %>
+  <%= f.check_box :energy, {}, "true", "false" %>
+
+  <%= f.label :alertness %>
+  <%= f.check_box :alertness, {}, "true", "false" %>
+
+  <%= f.label :sleeping %>
+  <%= f.check_box :sleeping, {}, "true", "false" %>
 
   <%= f.submit %>
 <% end %>

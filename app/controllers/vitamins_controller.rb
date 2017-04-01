@@ -25,6 +25,16 @@ class VitaminsController < ApplicationController
     @myvitamin.notes = params[:vitamin][:notes]
     @myvitamin.required = params[:vitamin][:required]
     @myvitamin.active = params[:vitamin][:active]
+    @myvitamin.general = params[:vitamin][:general]
+    @myvitamin.antioxidant = params[:vitamin][:antioxidant]
+    @myvitamin.skin = params[:vitamin][:skin]
+    @myvitamin.longevity = params[:vitamin][:longevity]
+    @myvitamin.digestive = params[:vitamin][:digestive]
+    @myvitamin.mood = params[:vitamin][:mood]
+    @myvitamin.sleeping = params[:vitamin][:sleeping]
+    @myvitamin.cellrepair = params[:vitamin][:cellrepair]
+    @myvitamin.energy = params[:vitamin][:energy]
+    @myvitamin.alertness = params[:vitamin][:alertness]
     @myvitamin.save
 
     return redirect_to action: 'index'
@@ -40,6 +50,16 @@ class VitaminsController < ApplicationController
     @myvitamin.notes = params[:vitamin][:notes]
     @myvitamin.required = params[:vitamin][:required]
     @myvitamin.active = params[:vitamin][:active]
+    @myvitamin.general = params[:vitamin][:general]
+    @myvitamin.antioxidant = params[:vitamin][:antioxidant]
+    @myvitamin.skin = params[:vitamin][:skin]
+    @myvitamin.longevity = params[:vitamin][:longevity]
+    @myvitamin.digestive = params[:vitamin][:digestive]
+    @myvitamin.mood = params[:vitamin][:mood]
+    @myvitamin.sleeping = params[:vitamin][:sleeping]
+    @myvitamin.cellrepair = params[:vitamin][:cellrepair]
+    @myvitamin.energy = params[:vitamin][:energy]
+    @myvitamin.alertness = params[:vitamin][:alertness]
     @myvitamin.save
 
     redirect_to action: 'index'

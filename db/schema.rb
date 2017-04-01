@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327025322) do
+ActiveRecord::Schema.define(version: 20170401033234) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 20170327025322) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "retailer"
+    t.boolean  "general"
+    t.boolean  "antioxidant"
+    t.boolean  "skin"
+    t.boolean  "longevity"
+    t.boolean  "digestive"
+    t.boolean  "mood"
+    t.boolean  "cellrepair"
+    t.boolean  "energy"
+    t.boolean  "alertness"
+    t.boolean  "sleeping"
     t.index ["user_id"], name: "index_vitamins_on_user_id"
   end
 
