@@ -1,24 +1,13 @@
-# README
+# Vitamins App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application allows users to track their vitamin consumption and related information.
 
-Things you may want to cover:
+Possible uses:
 
-* Ruby version
+* See monthly spending on supplements
 
-* System dependencies
+* Keep track of vitamins and observations
 
-* Configuration
+* Understand how many vitamins are being taken for various purposes (eye health, general wellbeing, bone density, etc.)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Monitor vitamins that are not yet available for purchase
