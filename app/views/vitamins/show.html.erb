@@ -3,11 +3,19 @@
   <% if !@myvitamin.unavailable %>
     <tr>
       <td>Active: </td>
-      <td><%= @myvitamin.active %></td>
+      <% if @myvitamin.active %>
+        <td>&#10004;</td>
+      <% else %>
+        <td>Inactive</td>
+      <% end %>
     </tr>
     <tr>
       <td>Required: </td>
-      <td><%= @myvitamin.required %></td>
+      <% if @myvitamin.required %>
+        <td>&#10004;</td>
+      <% else %>
+        <td>Not required</td>
+      <% end %>
     </tr>
     <tr>
       <td>Added: </td>
@@ -31,10 +39,10 @@
     </tr>
     <tr>
   <% else %>
-    <tr>
-      <td>Unavailable: </td>
-      <td><%= @myvitamin.unavailable %></td>
-    </tr>
+  <tr>
+    <td>Unavailable: </td>
+      <td>&#10004;</td>
+  </tr>
   <% end %>
     <td>Notes: </td>
     <td><%= @myvitamin.notes %></td>
@@ -46,61 +54,73 @@
   <% if @myvitamin.general %>
   <tr>
     <td>General: </td>
-    <td>X</td>
+    <td>&#10004;</td>
   </tr>
   <% end %>
   <% if @myvitamin.antioxidant %>
   <tr>
     <td>Antioxidant: </td>
-    <td>X</td>
+    <td>&#10004;</td>
   </tr>
   <% end %>
   <% if @myvitamin.skin %>
   <tr>
     <td>Improves Skin: </td>
-    <td>X</td>
+    <td>&#10004;</td>
   </tr>
   <% end %>
   <% if @myvitamin.longevity %>
   <tr>
     <td>Longevity: </td>
-    <td>X</td>
+    <td>&#10004;</td>
   </tr>
   <% end %>
   <% if @myvitamin.digestive %>
   <tr>
     <td>Digestive: </td>
-    <td>X</td>
+    <td>&#10004;</td>
   </tr>
   <% end %>
   <% if @myvitamin.mood %>
   <tr>
     <td>Mood: </td>
-    <td>X</td>
+    <td>&#10004;</td>
   </tr>
   <% end %>
   <% if @myvitamin.cellrepair %>
   <tr>
     <td>Cellular Repair: </td>
-    <td>X</td>
+    <td>&#10004;</td>
   </tr>
   <% end %>
   <% if @myvitamin.energy %>
   <tr>
     <td>Energy: </td>
-    <td>X</td>
+    <td>&#10004;</td>
   </tr>
   <% end %>
   <% if @myvitamin.alertness %>
   <tr>
     <td>Alertness: </td>
-    <td>X</td>
+    <td>&#10004;</td>
   </tr>
   <% end %>
   <% if @myvitamin.sleeping %>
   <tr>
     <td>Sleep: </td>
-    <td>X</td>
+    <td>&#10004;</td>
+  </tr>
+  <% end %>
+  <% if @myvitamin.eyes %>
+  <tr>
+    <td>Eyes: </td>
+    <td>&#10004;</td>
+  </tr>
+  <% end %>
+  <% if @myvitamin.bones %>
+  <tr>
+    <td>Bones: </td>
+    <td>&#10004;</td>
   </tr>
   <% end %>
 </table>

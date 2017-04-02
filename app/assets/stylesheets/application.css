@@ -57,12 +57,12 @@
    padding-left: 0%;
  }
 
- a:hover {
-   color: gray;
+ a:visited, a {
+   color: deepskyblue;
  }
 
- a:visited {
-   color: deepskyblue;
+ a:hover {
+   color: steelblue;
  }
 
  nav a:visited, nav a {
@@ -93,7 +93,7 @@ textarea {
   height: auto;
   margin: 0;
   outline: 0;
-  padding: 15px;
+  padding: 5px;
   font-size: 1em;
   width: 75%;
   background-color: azure;
@@ -117,4 +117,10 @@ textarea {
 .back {
   color: white;
   background-color: springgreen;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+table td {
+  padding-right: 20px;
 }
