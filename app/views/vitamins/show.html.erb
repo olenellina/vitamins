@@ -1,6 +1,4 @@
 <h3><%= @myvitamin.name %></h3>
-<h4>Stats:</h4>
-
 <table>
   <tr>
     <td>Active: </td>
@@ -99,7 +97,5 @@
   </tr>
   <% end %>
 </table>
-<section>
-  <%= button_to "Edit Vitamin", vitamins_edit_path(@myvitamin.id), method: :get%>
-  <%= button_to "Delete Vitamin", vitamins_delete_path(@myvitamin.id), method: :delete, data: {confirm:"Are you Sure?" }  %>
-</section>
+  <%= button_to "Edit Vitamin", vitamins_edit_path(@myvitamin.id), method: :get, class: "buttons left" %>
+  <%= button_to "Delete Vitamin", vitamins_delete_path(@myvitamin.id), method: :delete, data: {confirm:"Are you Sure?" }, class: "buttons"  %>

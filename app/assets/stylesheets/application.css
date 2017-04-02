@@ -61,11 +61,18 @@
    color: gray;
  }
 
- .submit-buttons, .buttons {
-   display: inline-block;
+ a:visited {
+   color: deepskyblue;
  }
 
- .submit-buttons {
+ nav a:visited, nav a {
+   color: steelblue;
+ }
+
+ .buttons {
+   display: inline-block;
+   margin-top: 25px;
+   margin-bottom: 20px;
    color: white;
    background-color: deepskyblue;
    font-size: 1em;
@@ -74,15 +81,10 @@
    border-radius: 15px;
  }
 
- label {
+label {
    display: block;
    margin-bottom: 8px;
  }
-
-input[type="checkbox"] {
-  margin: 0 4px 8px 0;
-  font-size: 2em;
-}
 
 input[type="text"],
 input[type="number"],
@@ -100,5 +102,14 @@ textarea {
 }
 
 .selectors td {
-    padding: 15px;
+    padding-right: 25px;
+}
+
+.main {
+  padding-left: 20px;
+}
+
+.left {
+  float: left;
+  margin-right: 25px;
 }

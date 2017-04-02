@@ -1,48 +1,51 @@
-<h2>New Vitamin Record</h2>
+<div class="main">
+  <h2>New Vitamin Record</h2>
 
-<%= form_for @myvitamin, url: vitamins_create_path do |f| %>
-  <%= f.label :name%>
-  <%= f.text_field :name%>
+  <%= form_for @myvitamin, url: vitamins_create_path do |f| %>
+    <%= f.label :name%>
+    <%= f.text_field :name%>
 
-  <table class="selectors">
-    <tr>
-      <td><%= f.label :active %><%= f.check_box :active, {}, "true", "false" %></td>
-      <td><%= f.label :required %><%= f.check_box :required, {}, "true", "false" %></td>
-    </tr>
-  </table>
+    <table class="selectors">
+      <tr>
+        <td><%= f.label :active %><%= f.check_box :active, {}, "true", "false" %></td>
+        <td><%= f.label :required %><%= f.check_box :required, {}, "true", "false" %></td>
+      </tr>
+    </table>
 
-  <%= f.label :dosage %>
-  <%= f.text_field :dosage %>
+    <%= f.label :dosage %>
+    <%= f.text_field :dosage %>
 
-  <%= f.label :cost %>
-  <%= f.number_field :cost %>
+    <%= f.label :cost %>
+    <%= f.number_field :cost %>
 
-  <%= f.label :retailer %>
-  <%= f.text_field :retailer %>
+    <%= f.label :retailer %>
+    <%= f.text_field :retailer %>
 
-  <%= f.label :photo %>
-  <%= f.text_field :photo %>
+    <%= f.label :photo %>
+    <%= f.text_field :photo %>
 
-  <%= f.label :observations %>
-  <%= f.text_area :observations %>
+    <%= f.label :observations %>
+    <%= f.text_area :observations %>
 
-  <%= f.label :notes %>
-  <%= f.text_area :notes %>
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
 
-  <table class="selectors">
-    <tr>
-      <td><%= f.label :general %><%= f.check_box :general, {}, "true", "false" %></td>
-      <td><%= f.label :antioxidant %><%= f.check_box :antioxidant, {}, "true", "false" %></td>
-      <td><%= f.label :mood %><%= f.check_box :mood, {}, "true", "false" %></td>
-      <td><%= f.label :skin %><%= f.check_box :skin, {}, "true", "false" %></td>
-      <td><%= f.label :longevity %><%= f.check_box :longevity, {}, "true", "false" %></td>
-      <td><%= f.label :digestive %><%= f.check_box :digestive, {}, "true", "false" %></td>
-      <td><%= f.label :cellrepair %><%= f.check_box :cellrepair, {}, "true", "false" %></td>
-      <td><%= f.label :energy %><%= f.check_box :energy, {}, "true", "false" %></td>
-      <td><%= f.label :alertness %><%= f.check_box :alertness, {}, "true", "false" %></td>
-      <td><%= f.label :sleeping %><%= f.check_box :sleeping, {}, "true", "false" %></td>
-    </tr>
-  </table>
+    <table class="selectors">
+      <h3> Supplementation Purpose </h3>
+      <tr>
+        <td><%= f.label :general %><%= f.check_box :general, {}, "true", "false" %></td>
+        <td><%= f.label :antioxidant %><%= f.check_box :antioxidant, {}, "true", "false" %></td>
+        <td><%= f.label :mood %><%= f.check_box :mood, {}, "true", "false" %></td>
+        <td><%= f.label :skin %><%= f.check_box :skin, {}, "true", "false" %></td>
+        <td><%= f.label :longevity %><%= f.check_box :longevity, {}, "true", "false" %></td>
+        <td><%= f.label :digestive %><%= f.check_box :digestive, {}, "true", "false" %></td>
+        <td><%= f.label :cellrepair %><%= f.check_box :cellrepair, {}, "true", "false" %></td>
+        <td><%= f.label :energy %><%= f.check_box :energy, {}, "true", "false" %></td>
+        <td><%= f.label :alertness %><%= f.check_box :alertness, {}, "true", "false" %></td>
+        <td><%= f.label :sleeping %><%= f.check_box :sleeping, {}, "true", "false" %></td>
+      </tr>
+    </table>
 
-  <%= f.submit :class => 'submit-buttons' %>
-<% end %>
+    <%= f.submit :class => 'buttons' %>
+  <% end %>
+</main>
