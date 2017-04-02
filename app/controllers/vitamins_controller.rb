@@ -14,6 +14,8 @@ class VitaminsController < ApplicationController
   end
 
   def create
+    # Unavailable vitamins are those that are still in research and not
+    # yet available for purchase
     @myvitamin = Vitamin.new
     @myvitamin.user_id = @user.id.to_i
     @myvitamin.name = params[:vitamin][:name]
@@ -25,6 +27,7 @@ class VitaminsController < ApplicationController
     @myvitamin.notes = params[:vitamin][:notes]
     @myvitamin.required = params[:vitamin][:required]
     @myvitamin.active = params[:vitamin][:active]
+    @myvitamin.unavailable = params[:vitamin][:unavailable]
     @myvitamin.general = params[:vitamin][:general]
     @myvitamin.antioxidant = params[:vitamin][:antioxidant]
     @myvitamin.skin = params[:vitamin][:skin]
@@ -35,6 +38,8 @@ class VitaminsController < ApplicationController
     @myvitamin.cellrepair = params[:vitamin][:cellrepair]
     @myvitamin.energy = params[:vitamin][:energy]
     @myvitamin.alertness = params[:vitamin][:alertness]
+    @myvitamin.bones = params[:vitamin][:bones]
+    @myvitamin.eyes = params[:vitamin][:eyes]
     @myvitamin.save
 
     return redirect_to action: 'index'
@@ -50,6 +55,7 @@ class VitaminsController < ApplicationController
     @myvitamin.notes = params[:vitamin][:notes]
     @myvitamin.required = params[:vitamin][:required]
     @myvitamin.active = params[:vitamin][:active]
+    @myvitamin.unavailable = params[:vitamin][:unavailable]
     @myvitamin.general = params[:vitamin][:general]
     @myvitamin.antioxidant = params[:vitamin][:antioxidant]
     @myvitamin.skin = params[:vitamin][:skin]
@@ -60,6 +66,8 @@ class VitaminsController < ApplicationController
     @myvitamin.cellrepair = params[:vitamin][:cellrepair]
     @myvitamin.energy = params[:vitamin][:energy]
     @myvitamin.alertness = params[:vitamin][:alertness]
+    @myvitamin.bones = params[:vitamin][:bones]
+    @myvitamin.eyes = params[:vitamin][:eyes]
     @myvitamin.save
 
     redirect_to action: 'index'

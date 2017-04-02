@@ -1,34 +1,41 @@
 <h3><%= @myvitamin.name %></h3>
 <table>
-  <tr>
-    <td>Active: </td>
-    <td><%= @myvitamin.active %></td>
-  </tr>
-  <tr>
-    <td>Required: </td>
-    <td><%= @myvitamin.required %></td>
-  </tr>
-  <tr>
-    <td>Added: </td>
-    <td><%= @myvitamin.created_at.strftime("%B %e %Y") %></td>
-  </tr>
-  <tr>
-    <td>Dosage per day: </td>
-    <td><%= @myvitamin.dosage %></td>
-  </tr>
-  <tr>
-    <td>Cost per month: </td>
-    <td><%= @myvitamin.cost %></td>
-  </tr>
-  <tr>
-    <td>Retailer: </td>
-    <td><%= @myvitamin.retailer %></td>
-  </tr>
-  <tr>
-    <td>Observations: </td>
-    <td><%= @myvitamin.observations %></td>
-  </tr>
-  <tr>
+  <% if !@myvitamin.unavailable %>
+    <tr>
+      <td>Active: </td>
+      <td><%= @myvitamin.active %></td>
+    </tr>
+    <tr>
+      <td>Required: </td>
+      <td><%= @myvitamin.required %></td>
+    </tr>
+    <tr>
+      <td>Added: </td>
+      <td><%= @myvitamin.created_at.strftime("%B %e %Y") %></td>
+    </tr>
+    <tr>
+      <td>Dosage per day: </td>
+      <td><%= @myvitamin.dosage %></td>
+    </tr>
+    <tr>
+      <td>Cost per month: </td>
+      <td><%= @myvitamin.cost %></td>
+    </tr>
+    <tr>
+      <td>Retailer: </td>
+      <td><%= @myvitamin.retailer %></td>
+    </tr>
+    <tr>
+      <td>Observations: </td>
+      <td><%= @myvitamin.observations %></td>
+    </tr>
+    <tr>
+  <% else %>
+    <tr>
+      <td>Unavailable: </td>
+      <td><%= @myvitamin.unavailable %></td>
+    </tr>
+  <% end %>
     <td>Notes: </td>
     <td><%= @myvitamin.notes %></td>
   </tr>
