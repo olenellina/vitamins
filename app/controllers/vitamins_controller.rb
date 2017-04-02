@@ -101,4 +101,5 @@ class VitaminsController < ApplicationController
       @user = User.find_by(id: session[:user_id].to_i)
     end
   end
+  
 end
