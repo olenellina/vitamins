@@ -70,7 +70,7 @@ class VitaminsController < ApplicationController
     @myvitamin.eyes = params[:vitamin][:eyes]
     @myvitamin.save
 
-    redirect_to action: 'index'
+    redirect_to action: 'show'
   end
 
   def edit

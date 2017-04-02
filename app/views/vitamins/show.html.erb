@@ -105,4 +105,5 @@
   <% end %>
 </table>
   <%= button_to "Edit Vitamin", vitamins_edit_path(@myvitamin.id), method: :get, class: "buttons left" %>
-  <%= button_to "Delete Vitamin", vitamins_delete_path(@myvitamin.id), method: :delete, data: {confirm:"Are you Sure?" }, class: "buttons"  %>
+  <%= button_to "Delete Vitamin", vitamins_delete_path(@myvitamin.id), method: :delete, data: {confirm:"Are you Sure?" }, class: "buttons left"  %>
+  <%= button_to "Back", vitamins_index_path, method: :get, class: "buttons back" %>
