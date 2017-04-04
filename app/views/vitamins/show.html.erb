@@ -1,129 +1,131 @@
-<h3><%= @myvitamin.name %></h3>
-<table>
-  <% if !@myvitamin.unavailable %>
-    <tr>
-      <td>Active: </td>
-      <% if @myvitamin.active %>
-        <td>&#10004;</td>
-      <% else %>
-        <td>Inactive</td>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Required: </td>
-      <% if @myvitamin.required %>
-        <td>&#10004;</td>
-      <% else %>
-        <td>Not required</td>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Added: </td>
-      <td><%= @myvitamin.created_at.strftime("%B %e %Y") %></td>
-    </tr>
-    <tr>
-      <td>Dosage per day: </td>
-      <td><%= @myvitamin.dosage %></td>
-    </tr>
-    <tr>
-      <td>Cost per month: </td>
-      <td><%= @myvitamin.cost %></td>
-    </tr>
-    <tr>
-      <td>Retailer: </td>
-      <td><%= @myvitamin.retailer %></td>
-    </tr>
-    <tr>
-      <td>Observations: </td>
-      <td><%= @myvitamin.observations %></td>
-    </tr>
-    <tr>
-  <% else %>
-  <tr>
-    <td>Unavailable: </td>
-      <td>&#10004;</td>
-  </tr>
-  <% end %>
-    <td>Notes: </td>
-    <td><%= @myvitamin.notes %></td>
-  </tr>
-</table>
-
-  <h4>Supplmentation Purpose:</h4>
+<div class="main">
+  <h3><%= @myvitamin.name %></h3>
   <table>
-  <% if @myvitamin.general %>
-  <tr>
-    <td>General: </td>
-    <td>&#10004;</td>
-  </tr>
-  <% end %>
-  <% if @myvitamin.antioxidant %>
-  <tr>
-    <td>Antioxidant: </td>
-    <td>&#10004;</td>
-  </tr>
-  <% end %>
-  <% if @myvitamin.skin %>
-  <tr>
-    <td>Improves Skin: </td>
-    <td>&#10004;</td>
-  </tr>
-  <% end %>
-  <% if @myvitamin.longevity %>
-  <tr>
-    <td>Longevity: </td>
-    <td>&#10004;</td>
-  </tr>
-  <% end %>
-  <% if @myvitamin.digestive %>
-  <tr>
-    <td>Digestive: </td>
-    <td>&#10004;</td>
-  </tr>
-  <% end %>
-  <% if @myvitamin.mood %>
-  <tr>
-    <td>Mood: </td>
-    <td>&#10004;</td>
-  </tr>
-  <% end %>
-  <% if @myvitamin.cellrepair %>
-  <tr>
-    <td>Cellular Repair: </td>
-    <td>&#10004;</td>
-  </tr>
-  <% end %>
-  <% if @myvitamin.energy %>
-  <tr>
-    <td>Energy: </td>
-    <td>&#10004;</td>
-  </tr>
-  <% end %>
-  <% if @myvitamin.alertness %>
-  <tr>
-    <td>Alertness: </td>
-    <td>&#10004;</td>
-  </tr>
-  <% end %>
-  <% if @myvitamin.sleeping %>
-  <tr>
-    <td>Sleep: </td>
-    <td>&#10004;</td>
-  </tr>
-  <% end %>
-  <% if @myvitamin.eyes %>
-  <tr>
-    <td>Eyes: </td>
-    <td>&#10004;</td>
-  </tr>
-  <% end %>
-  <% if @myvitamin.bones %>
-  <tr>
-    <td>Bones: </td>
-    <td>&#10004;</td>
-  </tr>
-  <% end %>
-</table>
-  <%= button_to "Edit Vitamin", vitamins_edit_path(@myvitamin.id), method: :get, class: "buttons left" %>
-  <%= button_to "Delete Vitamin", vitamins_delete_path(@myvitamin.id), method: :delete, data: {confirm:"Are you Sure?" }, class: "buttons left"  %>
-  <%= button_to "Back", vitamins_index_path, method: :get, class: "buttons back" %>
+    <% if !@myvitamin.unavailable %>
+      <tr>
+        <td>Active: </td>
+        <% if @myvitamin.active %>
+          <td>&#10004;</td>
+        <% else %>
+          <td>Inactive</td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Required: </td>
+        <% if @myvitamin.required %>
+          <td>&#10004;</td>
+        <% else %>
+          <td>Not required</td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Added: </td>
+        <td><%= @myvitamin.created_at.strftime("%B %e %Y") %></td>
+      </tr>
+      <tr>
+        <td>Dosage per day: </td>
+        <td><%= @myvitamin.dosage %></td>
+      </tr>
+      <tr>
+        <td>Cost per month: </td>
+        <td><%= @myvitamin.cost %></td>
+      </tr>
+      <tr>
+        <td>Retailer: </td>
+        <td><%= @myvitamin.retailer %></td>
+      </tr>
+      <tr>
+        <td>Observations: </td>
+        <td><%= @myvitamin.observations %></td>
+      </tr>
+      <tr>
+    <% else %>
+    <tr>
+      <td>Unavailable: </td>
+        <td>&#10004;</td>
+    </tr>
+    <% end %>
+      <td>Notes: </td>
+      <td><%= @myvitamin.notes %></td>
+    </tr>
+  </table>
+
+    <h4>Supplmentation Purpose:</h4>
+    <table>
+    <% if @myvitamin.general %>
+    <tr>
+      <td>General: </td>
+      <td>&#10004;</td>
+    </tr>
+    <% end %>
+    <% if @myvitamin.antioxidant %>
+    <tr>
+      <td>Antioxidant: </td>
+      <td>&#10004;</td>
+    </tr>
+    <% end %>
+    <% if @myvitamin.skin %>
+    <tr>
+      <td>Improves Skin: </td>
+      <td>&#10004;</td>
+    </tr>
+    <% end %>
+    <% if @myvitamin.longevity %>
+    <tr>
+      <td>Longevity: </td>
+      <td>&#10004;</td>
+    </tr>
+    <% end %>
+    <% if @myvitamin.digestive %>
+    <tr>
+      <td>Digestive: </td>
+      <td>&#10004;</td>
+    </tr>
+    <% end %>
+    <% if @myvitamin.mood %>
+    <tr>
+      <td>Mood: </td>
+      <td>&#10004;</td>
+    </tr>
+    <% end %>
+    <% if @myvitamin.cellrepair %>
+    <tr>
+      <td>Cellular Repair: </td>
+      <td>&#10004;</td>
+    </tr>
+    <% end %>
+    <% if @myvitamin.energy %>
+    <tr>
+      <td>Energy: </td>
+      <td>&#10004;</td>
+    </tr>
+    <% end %>
+    <% if @myvitamin.alertness %>
+    <tr>
+      <td>Alertness: </td>
+      <td>&#10004;</td>
+    </tr>
+    <% end %>
+    <% if @myvitamin.sleeping %>
+    <tr>
+      <td>Sleep: </td>
+      <td>&#10004;</td>
+    </tr>
+    <% end %>
+    <% if @myvitamin.eyes %>
+    <tr>
+      <td>Eyes: </td>
+      <td>&#10004;</td>
+    </tr>
+    <% end %>
+    <% if @myvitamin.bones %>
+    <tr>
+      <td>Bones: </td>
+      <td>&#10004;</td>
+    </tr>
+    <% end %>
+  </table>
+    <%= button_to "Edit Vitamin", vitamins_edit_path(@myvitamin.id), method: :get, class: "buttons left" %>
+    <%= button_to "Delete Vitamin", vitamins_delete_path(@myvitamin.id), method: :delete, data: {confirm:"Are you Sure?" }, class: "buttons left"  %>
+    <%= button_to "Back", vitamins_index_path, method: :get, class: "buttons back" %>
+</main>

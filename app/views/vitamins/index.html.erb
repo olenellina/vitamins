@@ -1,47 +1,49 @@
-<% if flash[:notice] %>
-<p><%= flash[:notice] %></p>
-<% end %>
+<div class='main'>
+  <% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+  <% end %>
 
-<% if @vitamins %>
-  <h3>Required Vitamins</h3>
-  <% @vitamins.each do |vitamin| %>
-    <% if vitamin.required %>
+  <% if @vitamins %>
+    <h3>Required Vitamins</h3>
+    <% @vitamins.each do |vitamin| %>
+      <% if vitamin.required %>
+          <section>
+            <h3><%=link_to( vitamin.name, vitamins_show_path(vitamin.id)) %></h3>
+          </section>
+      <% end %>
+    <% end %>
+
+    <br>
+
+    <h3>Experimental Vitamins</h3>
+    <% @vitamins.each do |vitamin| %>
+      <% if !vitamin.required && vitamin.active %>
         <section>
           <h3><%=link_to( vitamin.name, vitamins_show_path(vitamin.id)) %></h3>
         </section>
+      <% end %>
+    <% end %>
+
+    <br>
+
+    <h3>Unavailable Vitamins</h3>
+    <% @vitamins.each do |vitamin| %>
+      <% if vitamin.unavailable %>
+        <section>
+          <h3><%=link_to( vitamin.name, vitamins_show_path(vitamin.id)) %></h3>
+        </section>
+      <% end %>
+    <% end %>
+
+    <br>
+
+    <h3>Inactive Vitamins</h3>
+    <% @vitamins.each do |vitamin| %>
+      <% if !vitamin.active && !vitamin.unavailable %>
+        <section>
+          <h3><%=link_to( vitamin.name, vitamins_show_path(vitamin.id)) %></h3>
+        </section>
+      <% end %>
     <% end %>
   <% end %>
-
-  <br>
-
-  <h3>Experimental Vitamins</h3>
-  <% @vitamins.each do |vitamin| %>
-    <% if !vitamin.required && vitamin.active %>
-      <section>
-        <h3><%=link_to( vitamin.name, vitamins_show_path(vitamin.id)) %></h3>
-      </section>
-    <% end %>
-  <% end %>
-
-  <br>
-
-  <h3>Unavailable Vitamins</h3>
-  <% @vitamins.each do |vitamin| %>
-    <% if vitamin.unavailable %>
-      <section>
-        <h3><%=link_to( vitamin.name, vitamins_show_path(vitamin.id)) %></h3>
-      </section>
-    <% end %>
-  <% end %>
-
-  <br>
-
-  <h3>Inactive Vitamins</h3>
-  <% @vitamins.each do |vitamin| %>
-    <% if !vitamin.active && !vitamin.unavailable %>
-      <section>
-        <h3><%=link_to( vitamin.name, vitamins_show_path(vitamin.id)) %></h3>
-      </section>
-    <% end %>
-  <% end %>
-<% end %>
+</div>
