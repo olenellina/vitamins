@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170402050722) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "email"
@@ -47,7 +50,8 @@ ActiveRecord::Schema.define(version: 20170402050722) do
     t.boolean  "unavailable"
     t.boolean  "bones"
     t.boolean  "eyes"
-    t.index ["user_id"], name: "index_vitamins_on_user_id"
+    t.index ["user_id"], name: "index_vitamins_on_user_id", using: :btree
   end
 
+  add_foreign_key "vitamins", "users"
 end
