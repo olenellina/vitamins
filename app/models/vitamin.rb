@@ -10,7 +10,7 @@ class Vitamin < ApplicationRecord
             uniqueness: true
 
   def set_defaults
-    self.active ||= true
+    self.active ||= false
     self.required ||= false
     self.unavailable ||= false
   end
