@@ -1,4 +1,4 @@
-# Vitamins App
+# [Vitamins App](https://vitamins-app.herokuapp.com)
 
 This application allows users to track their vitamin consumption and related information.
 
