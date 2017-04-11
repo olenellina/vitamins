@@ -81,6 +81,13 @@ class VitaminsController < ApplicationController
     redirect_to action: 'index'
   end
 
+  def stats
+    @vitamins = Vitamin.where("user_id = ?", @user.id).to_a
+    @vitamins.each do |vitamin|
+      @totalcost += vitamin.cost
+    end
+  end
+
   private
 
   def find_vitamin
@@ -101,5 +108,5 @@ class VitaminsController < ApplicationController
       @user = User.find_by(id: session[:user_id].to_i)
     end
   end
-  
+
 end

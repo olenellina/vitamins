@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get 'vitamins/index' => 'vitamins#index', as: 'vitamins_index'
 
+  get 'vitamins/stats' => 'vitamins#stats', as: 'vitamins_stats'
+
   post 'vitamins/create' => 'vitamins#create', as: 'vitamins_create'
 
   get 'vitamins/show/:id' => 'vitamins#show', as: 'vitamins_show'
