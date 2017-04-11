@@ -17,6 +17,7 @@
               <% else %>
               <li><%= link_to "Home", vitamins_index_path %></li>
               <li><%=link_to( "New", vitamins_new_path) %></li>
+              <li><%= link_to "Statistics", vitamins_stats_path %></li>
               <li><%= link_to "Logout", session_delete_path(session[:user_id]), method: :delete, data: {confirm:"End your session?"} %></li>
           <% end %>
           </ul>
