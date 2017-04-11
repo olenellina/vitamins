@@ -82,9 +82,8 @@ class VitaminsController < ApplicationController
   end
 
   def stats
-    @vitamins = Vitamin.where("user_id = ?", @user.id).to_a
-    @totalcost = Vitamin.sum(:cost)
-    @vitamincount = Vitamin.where("active = 'true'").count
+    @totalcost = Vitamin.where("user_id = ?", @user.id).sum(:cost)
+    @vitamincount = Vitamin.where("active = 'true'", "user_id = ?", @user.id).count
   end
 
   private
