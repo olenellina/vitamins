@@ -1,1 +1,15 @@
-<%= @totalcost =%>
+<div class="main">
+  <h2>Your Vitamin Statistics</h2>
+  <table>
+      <tr>
+        <td>Total Monthly Expenditures: </td>
+        <td><%= number_to_currency(@totalcost) =%></td>
+      </tr>
+      <tr>
+        <td>Total Active Vitamins: </td>
+        <td><%= @vitamincount =%></td>
+      </tr>
+    </table>
+
+  <%= button_to "Back", vitamins_index_path, method: :get, class: "buttons back" %>
+</main>
