@@ -84,6 +84,18 @@ class VitaminsController < ApplicationController
   def stats
     @totalcost = Vitamin.where("user_id = ?", @user.id).sum(:cost)
     @vitamincount = Vitamin.where(["user_id = ? and active = ?", @user.id, true]).count
+    @general = Vitamin.where(["user_id = ? and general = ?", @user.id, true]).count
+    @antioxidant = Vitamin.where(["user_id = ? and antioxidant = ?", @user.id, true]).count
+    @skin = Vitamin.where(["user_id = ? and skin = ?", @user.id, true]).count
+    @longevity = Vitamin.where(["user_id = ? and longevity = ?", @user.id, true]).count
+    @digestive = Vitamin.where(["user_id = ? and digestive = ?", @user.id, true]).count
+    @mood = Vitamin.where(["user_id = ? and mood = ?", @user.id, true]).count
+    @cellrepair = Vitamin.where(["user_id = ? and cellrepair = ?", @user.id, true]).count
+    @energy = Vitamin.where(["user_id = ? and energy = ?", @user.id, true]).count
+    @alertness = Vitamin.where(["user_id = ? and alertness = ?", @user.id, true]).count
+    @sleeping = Vitamin.where(["user_id = ? and sleeping = ?", @user.id, true]).count
+    @bones = Vitamin.where(["user_id = ? and bones = ?", @user.id, true]).count
+    @eyes = Vitamin.where(["user_id = ? and eyes = ?", @user.id, true]).count
   end
 
   private
