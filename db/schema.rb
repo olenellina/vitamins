@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402050722) do
+ActiveRecord::Schema.define(version: 20170412015854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,14 +42,14 @@ ActiveRecord::Schema.define(version: 20170402050722) do
     t.boolean  "skin"
     t.boolean  "longevity"
     t.boolean  "digestive"
-    t.boolean  "mood"
     t.boolean  "cellrepair"
     t.boolean  "energy"
-    t.boolean  "alertness"
     t.boolean  "sleeping"
     t.boolean  "unavailable"
     t.boolean  "bones"
     t.boolean  "eyes"
+    t.boolean  "brain"
+    t.boolean  "joints"
     t.index ["user_id"], name: "index_vitamins_on_user_id", using: :btree
   end
 

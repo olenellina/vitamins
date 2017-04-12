@@ -33,11 +33,11 @@ class VitaminsController < ApplicationController
     @myvitamin.skin = params[:vitamin][:skin]
     @myvitamin.longevity = params[:vitamin][:longevity]
     @myvitamin.digestive = params[:vitamin][:digestive]
-    @myvitamin.mood = params[:vitamin][:mood]
+    @myvitamin.brain = params[:vitamin][:brain]
     @myvitamin.sleeping = params[:vitamin][:sleeping]
     @myvitamin.cellrepair = params[:vitamin][:cellrepair]
     @myvitamin.energy = params[:vitamin][:energy]
-    @myvitamin.alertness = params[:vitamin][:alertness]
+    @myvitamin.joints = params[:vitamin][:joints]
     @myvitamin.bones = params[:vitamin][:bones]
     @myvitamin.eyes = params[:vitamin][:eyes]
     @myvitamin.save
@@ -61,11 +61,11 @@ class VitaminsController < ApplicationController
     @myvitamin.skin = params[:vitamin][:skin]
     @myvitamin.longevity = params[:vitamin][:longevity]
     @myvitamin.digestive = params[:vitamin][:digestive]
-    @myvitamin.mood = params[:vitamin][:mood]
+    @myvitamin.brain = params[:vitamin][:brain]
     @myvitamin.sleeping = params[:vitamin][:sleeping]
     @myvitamin.cellrepair = params[:vitamin][:cellrepair]
     @myvitamin.energy = params[:vitamin][:energy]
-    @myvitamin.alertness = params[:vitamin][:alertness]
+    @myvitamin.joints = params[:vitamin][:joints]
     @myvitamin.bones = params[:vitamin][:bones]
     @myvitamin.eyes = params[:vitamin][:eyes]
     @myvitamin.save
@@ -89,10 +89,10 @@ class VitaminsController < ApplicationController
     @skin = Vitamin.where(["user_id = ? and skin = ?", @user.id, true]).count
     @longevity = Vitamin.where(["user_id = ? and longevity = ?", @user.id, true]).count
     @digestive = Vitamin.where(["user_id = ? and digestive = ?", @user.id, true]).count
-    @mood = Vitamin.where(["user_id = ? and mood = ?", @user.id, true]).count
+    @brain = Vitamin.where(["user_id = ? and brain = ?", @user.id, true]).count
     @cellrepair = Vitamin.where(["user_id = ? and cellrepair = ?", @user.id, true]).count
     @energy = Vitamin.where(["user_id = ? and energy = ?", @user.id, true]).count
-    @alertness = Vitamin.where(["user_id = ? and alertness = ?", @user.id, true]).count
+    @joints = Vitamin.where(["user_id = ? and joints = ?", @user.id, true]).count
     @sleeping = Vitamin.where(["user_id = ? and sleeping = ?", @user.id, true]).count
     @bones = Vitamin.where(["user_id = ? and bones = ?", @user.id, true]).count
     @eyes = Vitamin.where(["user_id = ? and eyes = ?", @user.id, true]).count
