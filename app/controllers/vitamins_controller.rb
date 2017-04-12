@@ -84,18 +84,21 @@ class VitaminsController < ApplicationController
   def stats
     @totalcost = Vitamin.where("user_id = ?", @user.id).sum(:cost)
     @vitamincount = Vitamin.where(["user_id = ? and active = ?", @user.id, true]).count
-    @general = Vitamin.where(["user_id = ? and general = ?", @user.id, true]).count
-    @antioxidant = Vitamin.where(["user_id = ? and antioxidant = ?", @user.id, true]).count
-    @skin = Vitamin.where(["user_id = ? and skin = ?", @user.id, true]).count
-    @longevity = Vitamin.where(["user_id = ? and longevity = ?", @user.id, true]).count
-    @digestive = Vitamin.where(["user_id = ? and digestive = ?", @user.id, true]).count
-    @brain = Vitamin.where(["user_id = ? and brain = ?", @user.id, true]).count
-    @cellrepair = Vitamin.where(["user_id = ? and cellrepair = ?", @user.id, true]).count
-    @energy = Vitamin.where(["user_id = ? and energy = ?", @user.id, true]).count
-    @joints = Vitamin.where(["user_id = ? and joints = ?", @user.id, true]).count
-    @sleeping = Vitamin.where(["user_id = ? and sleeping = ?", @user.id, true]).count
-    @bones = Vitamin.where(["user_id = ? and bones = ?", @user.id, true]).count
-    @eyes = Vitamin.where(["user_id = ? and eyes = ?", @user.id, true]).count
+
+    @chart_stats = [
+      get_stat("General", "general"),
+      get_stat("Antioxidant", "antioxidant"),
+      get_stat("Skin", "skin"),
+      get_stat("Longevity", "longevity"),
+      get_stat("Digestive", "digestive"),
+      get_stat("Brain", "brain"),
+      get_stat("Cell Repair", "cellrepair"),
+      get_stat("Energy", "energy"),
+      get_stat("Joints", "joints"),
+      get_stat("Sleeping", "sleeping"),
+      get_stat("Bones", "bones"),
+      get_stat("Eyes", "eyes")
+    ]
   end
 
   private
@@ -117,6 +120,10 @@ class VitaminsController < ApplicationController
     else
       @user = User.find_by(id: session[:user_id].to_i)
     end
+  end
+
+  def get_stat(name, type)
+    return [name, Vitamin.where(["user_id = ? and active = ? and " + type + " = ?", @user.id, true, true]).count]
   end
 
 end
